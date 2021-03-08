@@ -24,6 +24,7 @@ function palindromeChecker() {
   }
 
   // Output della parola inserita e invertita
+  console.log("---VERIFICA UN PALINDROMO---")
   console.log(reverse(wordToReverse));
   console.log(wordToReverse);
 
@@ -37,10 +38,32 @@ function palindromeChecker() {
 
 // GIOCO PARI O DISPARI
 function oddOrEvenGame() {
-  var userNum = parseInt( prompt("inserisci un numero naturale da 1 a 5") );
-  while ( userNum < 1  || userNum > 5 || isNaN(userNum) ) {
+
+  // Dichiarazione variabile
+  var maxNum = 5,
+      minNum = 1;
+  var userNum = parseInt( prompt( "inserisci un numero naturale da " + minNum + " a " + maxNum ) );
+
+  // Controllo input utente
+  while ( userNum < minNum  || userNum > maxNum || isNaN( userNum ) ) {
     alert("Il numero inserito non è valido, riprova");
-    userNum = parseInt( prompt("inserisci un numero da 1 a 5") );
+    userNum = parseInt( prompt( "inserisci un numero naturale da " + minNum + " a " + maxNum ) );
   }
-  
+
+  var userChoice = prompt( "Inserisci \"p\" per pari o \"d\" per dispari" );
+  console.log(userChoice);
+  while ( userChoice != "p" && userChoice != "d" ) {
+    alert("L' inserimento non è valido, riprova");
+    userChoice = prompt( "Inserisci \"p\" per pari o \"d\" per dispari" );
+  }
 }
+  // Genera un numero random dato un intervallo
+//   function genRandomNum( max, min ) {
+//     return Math.floor( Math.random() * (max - min + 1) ) + min;
+//   }
+//
+//   // Confronto tra i due numeri
+//   function comparison( num1 ) {
+//     return
+//   }
+// }
