@@ -34,3 +34,13 @@ function palindromeChecker() {
     console.log("La parola inserita non è palindroma, mi dispiace");
   }
 }
+
+// GIOCO PARI O DISPARI
+function oddOrEvenGame() {
+  var userNum = parseInt( prompt("inserisci un numero naturale da 1 a 5") );
+  while ( userNum < 1  || userNum > 5 || isNaN(userNum) ) {
+    alert("Il numero inserito non è valido, riprova");
+    userNum = parseInt( prompt("inserisci un numero da 1 a 5") );
+  }
+  
+}
