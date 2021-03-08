@@ -66,6 +66,7 @@ function oddOrEvenGame() {
   // Confronto tra i due numeri
   function isWin() {
     sum = genRandomNum( maxNum, minNum ) + userNum;
+    console.log( "La cpu ha fatto: " + ( sum - userNum ) );
     console.log("La somma è: " + sum );
     if ( ( sum % 2 == 0 && userChoice == "p" ) || ( sum % 2 == 1 && userChoice == "d" ) ) {
       return "Hai vinto!";
@@ -73,6 +74,11 @@ function oddOrEvenGame() {
     return "Hai perso, mi dispiace";
   }
 
-  console.log("Hai scelto: " + userChoice);
+  console.log("---PARI O DISPARI---");
+  if ( userChoice == "p" ) {
+    console.log( "Hai scelto \"pari\"" );
+  } else {
+    console.log( "Hai scelto \"dispari\"" );
+  }
   console.log(isWin());
 }
