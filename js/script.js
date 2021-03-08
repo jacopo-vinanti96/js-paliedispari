@@ -41,7 +41,8 @@ function oddOrEvenGame() {
 
   // Dichiarazione variabile
   var maxNum = 5,
-      minNum = 1;
+      minNum = 1,
+      sum;
   var userNum = parseInt( prompt( "inserisci un numero naturale da " + minNum + " a " + maxNum ) );
 
   // Controllo input utente
@@ -50,20 +51,28 @@ function oddOrEvenGame() {
     userNum = parseInt( prompt( "inserisci un numero naturale da " + minNum + " a " + maxNum ) );
   }
 
-  var userChoice = prompt( "Inserisci \"p\" per pari o \"d\" per dispari" );
-  console.log(userChoice);
+  var userChoice = prompt( "Inserisci \"p\" per pari o \"d\" per dispari" ).toLowerCase();
+
   while ( userChoice != "p" && userChoice != "d" ) {
     alert("L' inserimento non è valido, riprova");
-    userChoice = prompt( "Inserisci \"p\" per pari o \"d\" per dispari" );
+    userChoice = prompt( "Inserisci \"p\" per pari o \"d\" per dispari" ).toLowerCase();
   }
-}
+
   // Genera un numero random dato un intervallo
-//   function genRandomNum( max, min ) {
-//     return Math.floor( Math.random() * (max - min + 1) ) + min;
-//   }
-//
-//   // Confronto tra i due numeri
-//   function comparison( num1 ) {
-//     return
-//   }
-// }
+  function genRandomNum( max, min ) {
+    return Math.floor( Math.random() * (max - min + 1) ) + min;
+  }
+
+  // Confronto tra i due numeri
+  function isWin() {
+    sum = genRandomNum( maxNum, minNum ) + userNum;
+    console.log("La somma è: " + sum );
+    if ( ( sum % 2 == 0 && userChoice == "p" ) || ( sum % 2 == 1 && userChoice == "d" ) ) {
+      return "Hai vinto!";
+    }
+    return "Hai perso, mi dispiace";
+  }
+
+  console.log("Hai scelto: " + userChoice);
+  console.log(isWin());
+}
