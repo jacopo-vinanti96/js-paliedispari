@@ -54,7 +54,7 @@ function oddOrEvenGame() {
   var userNum = parseInt( prompt( "inserisci un numero naturale da " + minNum + " a " + maxNum ) );
 
   // Controllo input utente
-  while ( userNum < minNum  || userNum > maxNum || isNaN( userNum ) ) {
+  while ( userNum < minNum  || userNum > maxNum || isNaN( userNum ) ) {     //isNan non importa perchè ci sono già gli operatori di maggioranza
     alert("Il numero inserito non è valido, riprova");
     userNum = parseInt( prompt( "inserisci un numero naturale da " + minNum + " a " + maxNum ) );
   }
